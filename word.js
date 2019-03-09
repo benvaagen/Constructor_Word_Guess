@@ -1,4 +1,4 @@
-var letter = require("./letter.js");
+var Letter = require("./letter.js");
 
 function Word(answer) {
     this.objArray = [];

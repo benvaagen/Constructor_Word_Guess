@@ -74,8 +74,14 @@ function theLogic() {
         requireNewWord = false;
     }
 
+    
+
     var wordComplete = [];
     computerWord.objArray.forEach(completeCheck);
+
+    function completeCheck(key) {
+        wordComplete.push(key.guessed)
+    }
 
     //letters remaining to be guessed
     if (wordComplete.includes(false)) {
@@ -106,11 +112,11 @@ function theLogic() {
                         incorrectLetters.push(input.userInput);
                         guessesLeft--;
                     } else {
-                        console.log("\nCorreect\n");
+                        console.log("\nCorrect\n");
 
                         correctLetters.push(input.userInput);
                     }
-                    computerWord();
+                    // computerWord();
 
                     console.log("Guesses Left: " + guessesLeft + "\n");
 
@@ -128,13 +134,12 @@ function theLogic() {
                 }
             }
         });
-} else {
-    console.log("You Win\n");
+    } else {
+        console.log("You Win\n");
+    }
 }
 
-function completeCheck(key) {
-    wordComplete.push(key.guessed)
-}
+
 
 function restartGame() {
     inquirer.prompt([{
